@@ -2,22 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nayoks = ["Anwar", "Jafor", "Alomgir", "Salman"];
+  const nayoks = ["Anwar", "Jafor", "Alomgir", "Salman", "Bappi", "Shuvo"];
   const products = [
     {name: 'PhotoShop', price: '$90.99'},
     {name: 'Illustrator', price: '$60.99'},
     {name: 'PDF Reader', price: '$6.99'},
+    {name: 'Premiere El', price: '$246.99'},
   ];
+
+  // const productNames = products.map(product => product.name);
+  
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
-        {/* <Product name={products[0].name} price={products[0].price}></Product> */}
-        {/* Pass Object to Component */}
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
-        <Person name="Munna" profession="Engeneer"></Person>
-        <Person name="Masud" profession="Football"></Person>
+        <ul>
+
+          {
+           nayoks.map(nayok => <li>{nayok}</li>)
+          }
+
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+
+        </ul>
+        {
+          products.map(product => <Product product= {product}></Product>)
+        }
         <Person></Person>
       </header>
     </div>
