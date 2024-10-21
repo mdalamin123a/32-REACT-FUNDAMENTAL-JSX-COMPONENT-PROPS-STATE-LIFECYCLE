@@ -1,3 +1,4 @@
+import react, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
+        <Counter></Counter>
         <ul>
 
           {
@@ -36,6 +38,16 @@ function App() {
   );
 }
 
+function Counter(){
+  const [count, setCount] = useState(10);
+  console.log(count);
+  return(
+    <div>
+      <h1>Count: 0</h1>
+    </div>
+  );
+}
+
 function Product(props){
   const productStyles = {
     border: '1px solid gray',
@@ -46,7 +58,6 @@ function Product(props){
     float: 'left',
   };
   const {name, price} = props.product;
-  console.log(props);
   return(
     <div style={productStyles}>
       <h2>{name}</h2>
